@@ -16,6 +16,7 @@
 *.log
 *.pem
 *.tsbuildinfo
+app
 build
 coverage
 dist

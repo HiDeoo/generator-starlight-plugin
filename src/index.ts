@@ -2,7 +2,7 @@ import path from 'node:path'
 
 import Generator, { type BaseOptions } from 'yeoman-generator'
 
-import { copyTpl } from './libs/fs.js'
+import { copy, copyTpl } from './libs/fs.js'
 import { promptForName, promptForText } from './libs/prompt.js'
 
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
@@ -39,6 +39,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
   writing() {
     copyTpl(this, 'package.json')
+    copy(this, 'pnpm-workspace.yaml')
 
     copyTpl(this, 'packages/plugin', `packages/${this.configuration.name}`)
   }

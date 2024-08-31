@@ -2,8 +2,8 @@ import path from 'node:path'
 
 import Generator from 'yeoman-generator'
 
+import { copyTpl } from './libs/fs.js'
 import { getNamePrompt } from './libs/prompt.js'
-import { copyTpl } from './libs/writer.js'
 
 export default class StarlightPluginGenerator extends Generator {
   answers?: PromptAnswers
@@ -24,6 +24,8 @@ export default class StarlightPluginGenerator extends Generator {
 
   writing() {
     copyTpl(this, 'package.json')
+
+    copyTpl(this, 'packages/plugin', `packages/${this.answers?.name}`)
   }
 }
 

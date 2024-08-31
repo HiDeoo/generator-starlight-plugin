@@ -23,11 +23,18 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
     this.option('name', { type: String, description: 'Name of the Starlight plugin' })
     this.option('description', { type: String, description: 'Description of the Starlight plugin' })
+    this.option('ghUsername', { type: String, description: 'GitHub username' })
   }
 
   async prompting() {
     await promptForName(this)
-    await promptForText(this, 'description', 'What is the description of your Starlight plugin?')
+    await promptForText(
+      this,
+      'description',
+      'What is the description of your Starlight plugin?',
+      'My awesome Starlight plugin',
+    )
+    await promptForText(this, 'ghUsername', 'What is your GitHub username?', 'ghost')
   }
 
   writing() {
@@ -40,4 +47,5 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 export interface Configuration {
   name?: string
   description?: string
+  ghUsername?: string
 }

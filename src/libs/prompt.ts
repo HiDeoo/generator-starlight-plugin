@@ -22,7 +22,12 @@ export async function promptForName(generator: StarlightPluginGenerator) {
   generator.configuration.name = answers.name
 }
 
-export async function promptForText(generator: StarlightPluginGenerator, key: keyof Configuration, message: string) {
+export async function promptForText(
+  generator: StarlightPluginGenerator,
+  key: keyof Configuration,
+  message: string,
+  defaultValue: string,
+) {
   const text = generator.options[key]
 
   if (text) {
@@ -34,6 +39,7 @@ export async function promptForText(generator: StarlightPluginGenerator, key: ke
     type: 'input',
     name: key,
     message,
+    default: defaultValue,
   })
 
   generator.configuration[key] = answers[key]

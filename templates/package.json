@@ -1,3 +1,6 @@
 {
-  "name": "<%= name %>-monorepo"
+  "name": "<%= name %>-monorepo",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "<%= description %>"
 }

@@ -1,3 +1,8 @@
 {
-  "extends": "@hideoo/tsconfig"
+  "extends": "@hideoo/tsconfig",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "outDir": "app"
+  }
 }

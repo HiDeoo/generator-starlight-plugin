@@ -11,9 +11,12 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   constructor(...args: unknown[]) {
     super(...args)
 
-    this.configuration = {}
     this.description = '// TODO(HiDeoo)'
     this.sourceRoot(path.join(this.sourceRoot(), '../../templates'))
+
+    this.configuration = {
+      year: new Date().getFullYear().toString(),
+    }
 
     // TODO(HiDeoo) Move this to an optional install step.
     // TODO(HiDeoo) --skip-install
@@ -38,10 +41,14 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   }
 
   writing() {
+    copyTpl(this, 'LICENSE')
     copyTpl(this, 'package.json')
     copy(this, 'pnpm-workspace.yaml')
 
-    copyTpl(this, 'packages/plugin', `packages/${this.configuration.name}`)
+    const pluginPath = `packages/${this.configuration.name}`
+
+    copyTpl(this, 'packages/plugin', pluginPath)
+    copyTpl(this, 'LICENSE', `${pluginPath}/LICENSE`)
   }
 }
 
@@ -49,4 +56,5 @@ export interface Configuration {
   name?: string
   description?: string
   ghUsername?: string
+  year: string
 }

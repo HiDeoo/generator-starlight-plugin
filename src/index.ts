@@ -13,6 +13,9 @@ export default class StarlightPluginGenerator extends Generator {
 
     this.description = '// TODO(HiDeoo)'
     this.sourceRoot(path.join(this.sourceRoot(), '../../templates'))
+    // @ts-expect-error - Options are not typed.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    this.env.options.nodePackageManager = 'pnpm'
   }
 
   async prompting() {

@@ -2,7 +2,7 @@
   "name": "@hideoo/generator-starlight-plugin",
   "version": "0.0.1",
   "license": "MIT",
-  "description": "// TODO(HiDeoo)",
+  "description": "Yeoman generator for Starlight plugins.",
   "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
   "type": "module",
   "scripts": {
@@ -37,7 +37,10 @@
   "sideEffects": false,
   "keywords": [
     "yeoman-generator",
-    "// TODO(HiDeoo)"
+    "starlight",
+    "plugin",
+    "documentation",
+    "astro"
   ],
   "homepage": "https://github.com/HiDeoo/generator-starlight-plugin",
   "repository": {

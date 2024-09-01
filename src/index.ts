@@ -41,14 +41,15 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   }
 
   writing() {
+    copy(this, '.vscode')
+    // TODO(HiDeoo) .vscode/launch.json
+    // TODO(HiDeoo) gitignore
     copyTpl(this, 'LICENSE')
+    // TODO(HiDeoo) README
     copyTpl(this, 'package.json')
     copy(this, 'pnpm-workspace.yaml')
 
-    const pluginPath = `packages/${this.configuration.name}`
-
-    copyTpl(this, 'packages/plugin', pluginPath)
-    copyTpl(this, 'LICENSE', `${pluginPath}/LICENSE`)
+    copyTpl(this, 'packages/plugin', `packages/${this.configuration.name}`)
   }
 }
 

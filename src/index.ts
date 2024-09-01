@@ -42,8 +42,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   }
 
   async configuring() {
-    // TODO(HiDeoo) message
-    this.log.info('Fetching latest versions of dependencies…')
+    this.log.info('Preparing dependencies…')
     await fetchDependencyVersions()
 
     // TODO(HiDeoo) git repo?

@@ -38,8 +38,6 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   async configuring() {
     this.log.info('Preparing dependencies…')
     await fetchDependencyVersions()
-
-    // TODO(HiDeoo) git repo?
   }
 
   writing() {
@@ -67,6 +65,11 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     // @ts-expect-error - Environment options are not typed.
     // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
     this.env.options.nodePackageManager = 'pnpm'
+  }
+
+  async end() {
+    this.log.info('Initializing Git repository…')
+    await this.spawn('git', ['init', '--quiet'])
   }
 }
 

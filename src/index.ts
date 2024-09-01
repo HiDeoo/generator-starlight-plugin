@@ -47,7 +47,6 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   writing() {
     // root
     copy(this, '.vscode')
-    // TODO(HiDeoo) .vscode/launch.json
     copy(this, 'gitignore', '.gitignore')
     copyTpl(this, 'LICENSE')
     copyTpl(this, 'README.md')

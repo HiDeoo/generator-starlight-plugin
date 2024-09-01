@@ -1,3 +1,5 @@
+import camelCase from 'camelcase'
+
 import type StarlightPluginGenerator from '../index.js'
 
 import { getLatestMinorVersion, getLatestVersion } from './npm.js'
@@ -17,6 +19,7 @@ export function copy(generator: StarlightPluginGenerator, from: string, to?: str
 function getTemplateContext(generator: StarlightPluginGenerator) {
   return {
     ...generator.configuration,
+    importName: generator.configuration.name ? camelCase(generator.configuration.name) : generator.configuration.name,
     dep(pkg: string) {
       return `"${pkg}": "^${getLatestVersion(pkg)}"`
     },

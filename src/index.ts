@@ -57,6 +57,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     copy(this, 'pnpm-workspace.yaml')
 
     copyTpl(this, 'docs')
+    // TODO(HiDeoo) docs/public
     // TODO(HiDeoo) docs/README
 
     const pluginPath = `packages/${this.configuration.name}`

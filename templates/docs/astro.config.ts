@@ -1,6 +1,6 @@
 import starlight from '@astrojs/starlight'
 import { defineConfig } from 'astro/config'
-import plugin from '<%= name %>'
+import <%= importName %> from '<%= name %>'
 
 export default defineConfig({
   integrations: [
@@ -8,7 +8,7 @@ export default defineConfig({
       editLink: {
         baseUrl: 'https://github.com/<%= ghUsername %>/<%= name %>/edit/main/docs/',
       },
-      plugins: [plugin()],
+      plugins: [<%= importName %>()],
       sidebar: [
         {
           label: 'Start Here',

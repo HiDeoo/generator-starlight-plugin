@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      camelcase:
+        specifier: ^8.0.0
+        version: 8.0.0
       latest-version:
         specifier: ^9.0.0
         version: 9.0.0
@@ -507,6 +510,10 @@ packages:
   callsites@3.1.0:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
+
+  camelcase@8.0.0:
+    resolution: {integrity: sha512-8WB3Jcas3swSvjIeA2yvCJ+Miyz5l1ZmB6HFb9R1317dt9LCQoswg/BGrmAmkWVEszSrrg4RwmO46qIm2OEnSA==}
+    engines: {node: '>=16'}
 
   caniuse-lite@1.0.30001655:
     resolution: {integrity: sha512-jRGVy3iSGO5Uutn2owlb5gR6qsGngTw9ZTb4ali9f3glshcNmJ2noam4Mo9zia5P9Dk3jNNydy7vQjuE5dQmfg==}
@@ -2840,6 +2847,8 @@ snapshots:
       set-function-length: 1.2.2
 
   callsites@3.1.0: {}
+
+  camelcase@8.0.0: {}
 
   caniuse-lite@1.0.30001655: {}
 

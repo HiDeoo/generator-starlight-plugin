@@ -1,3 +1,31 @@
 {
-  "name": "<%= name %>"
+  "name": "<%= name %>",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "<%= description %>",
+  "author": "<%= ghUsername %>",
+  "type": "module",
+  "exports": {
+    ".": "./index.ts"
+  },
+  "devDependencies": {
+    <%- dep("@astrojs/starlight") %>,
+    <%- dep("astro") %>
+  },
+  "peerDependencies": {
+    <%- peerDep("@astrojs/starlight") %>
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/<%= ghUsername %>/<%= name %>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= ghUsername %>/<%= name %>.git",
+    "directory": "packages/<%= name %>"
+  },
+  "bugs": "https://github.com/<%= ghUsername %>/<%= name %>/issues"
 }

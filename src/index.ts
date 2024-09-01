@@ -3,6 +3,7 @@ import path from 'node:path'
 import Generator, { type BaseOptions } from 'yeoman-generator'
 
 import { copy, copyTpl } from './libs/fs.js'
+import { fetchDependencyVersions } from './libs/npm.js'
 import { promptForName, promptForText } from './libs/prompt.js'
 
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
@@ -38,6 +39,12 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       'My awesome Starlight plugin',
     )
     await promptForText(this, 'ghUsername', 'What is your GitHub username?', 'ghost')
+  }
+
+  async configuring() {
+    // TODO(HiDeoo) message
+    this.log.info('Fetching latest versions of dependencies…')
+    await fetchDependencyVersions()
   }
 
   writing() {

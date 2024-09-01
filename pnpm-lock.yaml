@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      latest-version:
+        specifier: ^9.0.0
+        version: 9.0.0
       yeoman-generator:
         specifier: ^7.3.2
         version: 7.3.2(@yeoman/types@1.4.0(@yeoman/adapter@1.6.0)(mem-fs@4.1.0))(mem-fs@4.1.0)
@@ -1344,6 +1347,10 @@ packages:
   keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}
 
+  ky@1.7.1:
+    resolution: {integrity: sha512-KJ/IXXkFhTDqxcN8wKqMXk1/UoOpc0UnOB6H7QcqlPInh/M2B5Mlj+i9exez1w4RSwJhNFmHiUDPriAYFwb5VA==}
+    engines: {node: '>=18'}
+
   language-subtag-registry@0.3.23:
     resolution: {integrity: sha512-0K65Lea881pHotoGEa5gDlMxt3pctLi2RplBb7Ezh4rRdLEOtgi7n4EwK9lamnUCkKBqaeKRVebTq6BAxSkpXQ==}
 
@@ -1354,6 +1361,10 @@ packages:
   latest-version@7.0.0:
     resolution: {integrity: sha512-KvNT4XqAMzdcL6ka6Tl3i2lYeFDgXNCuIX+xNx6ZMVR1dFq+idXd9FLKNMOIx0t9mJ9/HudyX4oZWXZQ0UJHeg==}
     engines: {node: '>=14.16'}
+
+  latest-version@9.0.0:
+    resolution: {integrity: sha512-7W0vV3rqv5tokqkBAFV1LbR7HPOWzXQDpDgEuib/aJ1jsZZx6x3c2mBI+TJhJzOhkGeaLbCKEHXEXLfirtG2JA==}
+    engines: {node: '>=18'}
 
   levn@0.4.1:
     resolution: {integrity: sha512-+bT2uH4E5LGE7h/n3evcS/sQlJXCpIp6ym8OWJ5eV6+67Dsql/LaaT7qJBAt2rzfoa/5QBGBhxDix1dMt2kQKQ==}
@@ -1641,6 +1652,10 @@ packages:
   p-try@2.2.0:
     resolution: {integrity: sha512-R4nPAVTAU0B9D35/Gk3uJf/7XYbQcyohSKdvAxIRSNghFl4e71hVoGnBNQz9cWaXxO2I10KTC+3jMdvvoKw6dQ==}
     engines: {node: '>=6'}
+
+  package-json@10.0.1:
+    resolution: {integrity: sha512-ua1L4OgXSBdsu1FPb7F3tYH0F48a6kxvod4pLUlGY9COeJAJQNX/sNH2IiEmsxw7lqYiAwrdHMjz1FctOsyDQg==}
+    engines: {node: '>=18'}
 
   package-json@8.1.1:
     resolution: {integrity: sha512-cbH9IAIJHNj9uXi196JVsRlt7cHKak6u/e6AkL/bkRelZ7rlL3X1YKxsZwa36xipOEKAsdtmaG6aAJoM1fx2zA==}
@@ -2510,7 +2525,7 @@ snapshots:
   '@types/vinyl@2.0.12':
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 20.16.2
+      '@types/node': 22.5.1
 
   '@typescript-eslint/eslint-plugin@7.0.2(@typescript-eslint/parser@7.0.2(eslint@8.57.0)(typescript@5.5.4))(eslint@8.57.0)(typescript@5.5.4)':
     dependencies:
@@ -3766,6 +3781,8 @@ snapshots:
     dependencies:
       json-buffer: 3.0.1
 
+  ky@1.7.1: {}
+
   language-subtag-registry@0.3.23: {}
 
   language-tags@1.0.9:
@@ -3775,6 +3792,10 @@ snapshots:
   latest-version@7.0.0:
     dependencies:
       package-json: 8.1.1
+
+  latest-version@9.0.0:
+    dependencies:
+      package-json: 10.0.1
 
   levn@0.4.1:
     dependencies:
@@ -4093,6 +4114,13 @@ snapshots:
   p-timeout@6.1.2: {}
 
   p-try@2.2.0: {}
+
+  package-json@10.0.1:
+    dependencies:
+      ky: 1.7.1
+      registry-auth-token: 5.0.2
+      registry-url: 6.0.1
+      semver: 7.6.3
 
   package-json@8.1.1:
     dependencies:

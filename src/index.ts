@@ -12,7 +12,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   constructor(...args: unknown[]) {
     super(...args)
 
-    this.description = '// TODO(HiDeoo)'
+    this.description = 'Generates a Starlight plugin ready for development.'
     this.sourceRoot(path.join(this.sourceRoot(), '../../templates'))
 
     this.configuration = {

@@ -45,12 +45,14 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     // TODO(HiDeoo) message
     this.log.info('Fetching latest versions of dependencies…')
     await fetchDependencyVersions()
+
+    // TODO(HiDeoo) git repo?
   }
 
   writing() {
     copy(this, '.vscode')
     // TODO(HiDeoo) .vscode/launch.json
-    // TODO(HiDeoo) gitignore
+    copy(this, 'gitignore', '.gitignore')
     copyTpl(this, 'LICENSE')
     // TODO(HiDeoo) README
     copyTpl(this, 'package.json')
@@ -66,7 +68,6 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     copy(this, 'packages/plugin/.npmignore', `${pluginPath}/.npmignore`)
     // TODO(HiDeoo) plugin/gitignore?
     // TODO(HiDeoo) plugin/README
-    // TODO(HiDeoo) plugin/index.ts
   }
 }
 

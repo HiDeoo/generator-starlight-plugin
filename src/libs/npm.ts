@@ -1,7 +1,7 @@
 import latestVersion from 'latest-version'
 
 // A list of dependencies to fetch versions for and can be used synchronously in templates.
-const dependencies = new Set(['@astrojs/starlight', 'astro'])
+const dependencies = new Set(['@astrojs/starlight', 'astro', 'sharp'])
 
 // A map of dependencies and their latest versions.
 const versions = new Map<string, string>()

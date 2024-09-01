@@ -56,10 +56,13 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     copyTpl(this, 'package.json')
     copy(this, 'pnpm-workspace.yaml')
 
+    copyTpl(this, 'docs')
+
     const pluginPath = `packages/${this.configuration.name}`
 
     copyTpl(this, 'packages/plugin', pluginPath)
     copy(this, 'packages/plugin/.npmignore', `${pluginPath}/.npmignore`)
+    // TODO(HiDeoo) plugin/gitignore?
     // TODO(HiDeoo) plugin/README
     // TODO(HiDeoo) plugin/index.ts
   }

@@ -24,6 +24,10 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     this.option('ghUsername', { type: String, description: 'GitHub username' })
   }
 
+  initializing() {
+    this.log('Welcome to the Starlight plugin generator!\n')
+  }
+
   async prompting() {
     await promptForName(this)
     await promptForText(
@@ -58,7 +62,6 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
     copyTpl(this, 'packages/plugin', pluginPath)
     copy(this, 'packages/plugin/.npmignore', `${pluginPath}/.npmignore`)
-    // TODO(HiDeoo) plugin/gitignore?
   }
 
   install() {
@@ -70,6 +73,10 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   async end() {
     this.log.info('Initializing Git repository…')
     await this.spawn('git', ['init', '--quiet'])
+
+    this.log('\nYour Starlight plugin has been successfully created!\n')
+    this.log(`Edit the 'packages/${this.configuration.name}/index.ts' file to start developing your plugin.`)
+    this.log('For more information, also visit https://starlight.astro.build/')
   }
 }
 

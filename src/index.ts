@@ -19,12 +19,6 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       year: new Date().getFullYear().toString(),
     }
 
-    // TODO(HiDeoo) Move this to an optional install step.
-    // TODO(HiDeoo) --skip-install
-    // @ts-expect-error - Environment options are not typed.
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
-    this.env.options.nodePackageManager = 'pnpm'
-
     this.option('name', { type: String, description: 'Name of the Starlight plugin' })
     this.option('description', { type: String, description: 'Description of the Starlight plugin' })
     this.option('ghUsername', { type: String, description: 'GitHub username' })
@@ -69,6 +63,12 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     copy(this, 'packages/plugin/.npmignore', `${pluginPath}/.npmignore`)
     // TODO(HiDeoo) plugin/gitignore?
     // TODO(HiDeoo) plugin/README
+  }
+
+  install() {
+    // @ts-expect-error - Environment options are not typed.
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-member-access
+    this.env.options.nodePackageManager = 'pnpm'
   }
 }
 

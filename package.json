@@ -1,6 +1,6 @@
 {
   "name": "@hideoo/generator-starlight-plugin",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "MIT",
   "description": "Yeoman generator for Starlight plugins.",
   "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",

@@ -25,7 +25,7 @@ An **opinionated** but still **lightweight** Yeoman generator to help create Sta
 To use the generator, run the following command in your terminal from the directory where you want to work on your plugin:
 
 ```shell
-npx yo @hideoo/starlight-plugin
+npx -p yo -p @hideoo/generator-starlight-plugin -- yo @hideoo/starlight-plugin
 ```
 
 To start creating your Starlight plugin, edit the `packages/plugin-name/index.ts` file which will be the entry point of your plugin.

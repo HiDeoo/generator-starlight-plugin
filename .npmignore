@@ -4,6 +4,6 @@
 .prettierignore
 .vscode
 eslint.config.js
-src
-tsconfig.json
+/src
+/tsconfig.json
 tsconfig.tsbuildinfo

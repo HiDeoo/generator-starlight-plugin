@@ -1,0 +1,32 @@
+{
+  "name": "<%= name %>-docs",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "<%= description %>",
+  "author": "<%= ghUsername %>",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    <%- dep("@astrojs/starlight") %>,
+    <%- dep("astro") %>,
+    <%- dep("sharp") %>,
+    "<%= name %>": "workspace:*"
+  },
+  "engines": {
+    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+  },
+  "private": true,
+  "homepage": "https://github.com/<%= ghUsername %>/<%= name %>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/<%= ghUsername %>/<%= name %>.git",
+    "directory": "docs"
+  },
+  "bugs": "https://github.com/<%= ghUsername %>/<%= name %>/issues"
+}

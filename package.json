@@ -1,0 +1,58 @@
+{
+  "name": "@hideoo/generator-starlight-plugin",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "Yeoman generator for Starlight plugins.",
+  "author": "HiDeoo <github@hideoo.dev> (https://hideoo.dev)",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "lint": "prettier -c --cache . && eslint . --cache --max-warnings=0 && tsc --noEmit",
+    "prepare": "husky",
+    "prepublishOnly": "pnpm build"
+  },
+  "dependencies": {
+    "camelcase": "^8.0.0",
+    "latest-version": "^9.0.0",
+    "yeoman-generator": "^7.3.2"
+  },
+  "devDependencies": {
+    "@hideoo/eslint-config": "^3.0.1",
+    "@hideoo/prettier-config": "^2.0.0",
+    "@hideoo/tsconfig": "^2.0.1",
+    "eslint": "^8.57.0",
+    "husky": "^9.1.5",
+    "lint-staged": "^15.2.9",
+    "prettier": "^3.3.3",
+    "typescript": "^5.5.4"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "pnpm@9.9.0",
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "keywords": [
+    "yeoman-generator",
+    "starlight",
+    "plugin",
+    "documentation",
+    "astro"
+  ],
+  "homepage": "https://github.com/HiDeoo/generator-starlight-plugin",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HiDeoo/generator-starlight-plugin.git"
+  },
+  "bugs": "https://github.com/HiDeoo/generator-starlight-plugin/issues",
+  "prettier": "@hideoo/prettier-config",
+  "lint-staged": {
+    "*": [
+      "prettier -w -u --cache",
+      "eslint --cache --no-warn-ignored --max-warnings=0"
+    ]
+  }
+}

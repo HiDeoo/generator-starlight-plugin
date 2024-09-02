@@ -1,0 +1,9 @@
+.eslintcache
+.github
+.husky
+.prettierignore
+.vscode
+eslint.config.js
+src
+tsconfig.json
+tsconfig.tsbuildinfo

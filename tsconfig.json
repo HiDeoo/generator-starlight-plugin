@@ -1,0 +1,9 @@
+{
+  "extends": "@hideoo/tsconfig",
+  "compilerOptions": {
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "outDir": "app"
+  },
+  "exclude": ["templates"]
+}

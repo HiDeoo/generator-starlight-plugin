@@ -46,7 +46,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
   writing() {
     // root
-    copy(this, '.vscode')
+    copy(this, 'vscode', '.vscode')
     copy(this, 'gitignore', '.gitignore')
     copyTpl(this, 'LICENSE')
     copyTpl(this, 'README.md')
@@ -60,7 +60,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     const pluginPath = `packages/${this.configuration.name}`
 
     copyTpl(this, 'packages/plugin', pluginPath)
-    copy(this, 'packages/plugin/.npmignore', `${pluginPath}/.npmignore`)
+    copy(this, 'npmignore', `${pluginPath}/.npmignore`)
   }
 
   install() {

@@ -1,7 +1,7 @@
 import type StarlightPluginGenerator from '../index.js'
 import type { Configuration } from '../index.js'
 
-import { validateName } from './validator.js'
+import { validateName, validateNonEmptyString } from './validator.js'
 
 export async function promptForName(generator: StarlightPluginGenerator) {
   const name = generator.options.name
@@ -40,6 +40,7 @@ export async function promptForText(
     name: key,
     message,
     default: defaultValue,
+    validate: validateNonEmptyString,
   })
 
   generator.configuration[key] = answers[key]

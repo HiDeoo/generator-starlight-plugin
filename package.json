@@ -8,8 +8,8 @@
   "scripts": {
     "dev": "tsc --watch",
     "build": "tsc",
-    "lint": "prettier -c --cache . && eslint . --cache --max-warnings=0 && tsc --noEmit",
-    "prepare": "husky",
+    "lint": "eslint . --cache --max-warnings=0 && tsc --noEmit",
+    "format": "prettier -w --cache --ignore-unknown .",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
@@ -22,8 +22,6 @@
     "@hideoo/prettier-config": "^2.0.0",
     "@hideoo/tsconfig": "^2.0.1",
     "eslint": "^8.57.0",
-    "husky": "^9.1.5",
-    "lint-staged": "^15.2.9",
     "prettier": "^3.3.3",
     "typescript": "^5.5.4"
   },
@@ -48,11 +46,5 @@
     "url": "https://github.com/HiDeoo/generator-starlight-plugin.git"
   },
   "bugs": "https://github.com/HiDeoo/generator-starlight-plugin/issues",
-  "prettier": "@hideoo/prettier-config",
-  "lint-staged": {
-    "*": [
-      "prettier -w -u --cache",
-      "eslint --cache --no-warn-ignored --max-warnings=0"
-    ]
-  }
+  "prettier": "@hideoo/prettier-config"
 }

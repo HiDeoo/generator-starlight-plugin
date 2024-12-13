@@ -10,6 +10,7 @@
     "build": "tsc",
     "lint": "eslint . --cache --max-warnings=0 && tsc --noEmit",
     "format": "prettier -w --cache --ignore-unknown .",
+    "version": "pnpm changeset version && pnpm i --no-frozen-lockfile",
     "prepublishOnly": "pnpm build"
   },
   "dependencies": {
@@ -18,6 +19,8 @@
     "yeoman-generator": "^7.3.2"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.5.0",
+    "@changesets/cli": "^2.27.10",
     "@hideoo/eslint-config": "^3.0.1",
     "@hideoo/prettier-config": "^2.0.0",
     "@hideoo/tsconfig": "^2.0.1",
@@ -30,7 +33,8 @@
   },
   "packageManager": "pnpm@9.9.0",
   "publishConfig": {
-    "access": "public"
+    "access": "public",
+    "provenance": true
   },
   "sideEffects": false,
   "keywords": [

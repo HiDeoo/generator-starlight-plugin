@@ -3,7 +3,7 @@
 .husky
 .prettierignore
 .vscode
-eslint.config.js
+eslint.config.mjs
 /src
 /tsconfig.json
 tsconfig.tsbuildinfo

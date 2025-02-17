@@ -4,7 +4,7 @@ export default function <%= importName %>(): StarlightPlugin {
   return {
     name: '<%= name %>',
     hooks: {
-      setup({ logger }) {
+      'config:setup'({ logger }) {
         /**
          * This is the entry point of your Starlight plugin.
          * The `setup` hook is called when Starlight is initialized (during the Astro `astro:config:setup` integration

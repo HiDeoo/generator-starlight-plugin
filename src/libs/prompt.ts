@@ -1,7 +1,7 @@
 import type StarlightPluginGenerator from '../index.js'
 import type { Configuration } from '../index.js'
 
-import { validateName, validateNonEmptyString } from './validator.js'
+import { validateEmoji, validateName, validateNonEmptyString } from './validator.js'
 
 export async function promptForName(generator: StarlightPluginGenerator) {
   const name = generator.options.name
@@ -44,4 +44,24 @@ export async function promptForText(
   })
 
   generator.configuration[key] = answers[key]
+}
+
+export async function promptForEmoji(generator: StarlightPluginGenerator) {
+  const emoji = generator.options.emoji
+
+  if (emoji && validateEmoji(emoji) === true) {
+    generator.configuration.emoji = emoji
+    return
+  }
+
+  const answers = await generator.prompt<{ emoji: string }>({
+    type: 'input',
+    name: 'emoji',
+    message: 'What single emoji represents your Starlight plugin?',
+    default: '🔋',
+    suffix: '(used in the documentation)',
+    validate: validateEmoji,
+  })
+
+  generator.configuration.emoji = answers.emoji
 }

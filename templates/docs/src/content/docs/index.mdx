@@ -4,12 +4,20 @@ description: <%= description %>
 head:
   - tag: title
     content: <%= name %>
+  - tag: style
+    content: |
+      .hero-html {
+        --size: 12rem;
+        font-size: var(--size);
+        justify-content: center;
+        line-height: var(--size);
+      }
 template: splash
 editUrl: false
 hero:
   tagline: <%= description %>
   image:
-    file: ../../assets/houston.webp
+    html: '<%= emoji %>'
   actions:
     - text: Get Started
       link: /getting-started/

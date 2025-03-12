@@ -4,7 +4,7 @@ import Generator, { type BaseOptions } from 'yeoman-generator'
 
 import { copy, copyTpl } from './libs/fs.js'
 import { fetchDependencyVersions } from './libs/npm.js'
-import { promptForName, promptForText } from './libs/prompt.js'
+import { promptForEmoji, promptForName, promptForText } from './libs/prompt.js'
 
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
   configuration: Configuration
@@ -21,6 +21,10 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
     this.option('name', { type: String, description: 'Name of the Starlight plugin' })
     this.option('description', { type: String, description: 'Description of the Starlight plugin' })
+    this.option('emoji', {
+      type: String,
+      description: 'Single emoji representing the Starlight plugin (used in the documentation)',
+    })
     this.option('ghUsername', { type: String, description: 'GitHub username' })
   }
 
@@ -36,6 +40,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       'What is the description of your Starlight plugin?',
       'My awesome Starlight plugin',
     )
+    await promptForEmoji(this)
     await promptForText(this, 'ghUsername', 'What is your GitHub username?', 'ghost')
   }
 
@@ -82,6 +87,7 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 export interface Configuration {
   name?: string
   description?: string
+  emoji?: string
   ghUsername?: string
   year: string
 }

@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.5.0
+
+### Minor Changes
+
+- [#11](https://github.com/HiDeoo/generator-starlight-plugin/pull/11) [`6d17a1c`](https://github.com/HiDeoo/generator-starlight-plugin/commit/6d17a1ccb3f8b968d5496aee8f80195cacc75e29) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Adds support for Starlight v0.33.0.
+
 ## 0.4.0
 
 ### Minor Changes

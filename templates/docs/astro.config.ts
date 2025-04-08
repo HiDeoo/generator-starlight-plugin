@@ -15,9 +15,9 @@ export default defineConfig({
           items: [{ slug: 'getting-started' }],
         },
       ],
-      social: {
-        github: 'https://github.com/<%= ghUsername %>/<%= name %>',
-      },
+      social: [
+        { href: 'https://github.com/<%= ghUsername %>/<%= name %>', icon: 'github', label: 'GitHub' },
+      ],
       title: '<%= name %>',
     }),
   ],

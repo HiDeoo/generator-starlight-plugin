@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.5.1
+
+### Patch Changes
+
+- [#13](https://github.com/HiDeoo/generator-starlight-plugin/pull/13) [`25eb69c`](https://github.com/HiDeoo/generator-starlight-plugin/commit/25eb69c006dec3bf96571f6eca1be155cb6993fd) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Fixes an invalid Starlight plugin hook name in a comment of the generated plugin.
+
 ## 0.5.0
 
 ### Minor Changes

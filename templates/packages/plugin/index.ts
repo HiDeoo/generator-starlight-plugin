@@ -4,7 +4,7 @@ export default function <%= importName %>(): StarlightPlugin {
   return {
     name: '<%= name %>',
     hooks: {
-      'config:setup'({ logger }) {
+      'config:setup'({ <% if(theme){ %>config, logger, updateConfig<% } else{ %>logger<% } %> }) {
         /**
          * This is the entry point of your Starlight plugin.
          * The `config:setup` hook is called when Starlight is initialized (during the Astro `astro:config:setup`
@@ -15,7 +15,17 @@ export default function <%= importName %>(): StarlightPlugin {
          * @see https://starlight.astro.build/reference/plugins/
          */
         logger.info('Hello from the <%= name %> plugin!')
-      },
+<% if (theme) { %>
+        /**
+         * Update the provided Starlight user configuration by appending the theme CSS file to the `customCss` array.
+         *
+         * @see https://starlight.astro.build/reference/plugins/#updateconfig
+         * @see https://starlight.astro.build/reference/configuration/#customcss
+         */
+        updateConfig({
+          customCss: [...(config.customCss ?? []), '<%= name %>/styles'],
+        })
+<% } -%>      },
     },
   }
 }

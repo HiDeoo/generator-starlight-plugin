@@ -6,7 +6,8 @@
   "author": "<%= ghUsername %>",
   "type": "module",
   "exports": {
-    ".": "./index.ts"
+    ".": "./index.ts"<% if (theme) { %>,
+    "./styles": "./styles.css"<% } %>
   },
   "devDependencies": {
     <%- dep("@astrojs/starlight") %>,

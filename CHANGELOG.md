@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.6.0
+
+### Minor Changes
+
+- [#15](https://github.com/HiDeoo/generator-starlight-plugin/pull/15) [`a3941f8`](https://github.com/HiDeoo/generator-starlight-plugin/commit/a3941f80de6c64e9084c0351a3208c1b438c9d46) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Adds support for scaffolding themes.
+
 ## 0.5.1
 
 ### Patch Changes

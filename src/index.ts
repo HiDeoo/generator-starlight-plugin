@@ -4,7 +4,7 @@ import Generator, { type BaseOptions } from 'yeoman-generator'
 
 import { copy, copyTpl } from './libs/fs.js'
 import { fetchDependencyVersions } from './libs/npm.js'
-import { promptForEmoji, promptForName, promptForText } from './libs/prompt.js'
+import { promptForEmoji, promptForLayer, promptForName, promptForText, promptForTheme } from './libs/prompt.js'
 
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
   configuration: Configuration
@@ -25,6 +25,8 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       type: String,
       description: 'Single emoji representing the Starlight plugin (used in the documentation)',
     })
+    this.option('theme', { type: Boolean, description: 'Define if the plugin is a theme' })
+    this.option('layer', { type: String, description: 'Name of the theme CSS cascade layer (only used for themes)' })
     this.option('ghUsername', { type: String, description: 'GitHub username' })
   }
 
@@ -41,6 +43,8 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       'My awesome Starlight plugin',
     )
     await promptForEmoji(this)
+    await promptForTheme(this)
+    if (this.configuration.theme) await promptForLayer(this)
     await promptForText(this, 'ghUsername', 'What is your GitHub username?', 'ghost')
   }
 
@@ -66,6 +70,10 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
     copyTpl(this, 'packages/plugin', pluginPath)
     copy(this, 'npmignore', `${pluginPath}/.npmignore`)
+
+    if (this.configuration.theme) {
+      copyTpl(this, 'styles.css', `${pluginPath}/styles.css`)
+    }
   }
 
   install() {
@@ -89,5 +97,7 @@ export interface Configuration {
   description?: string
   emoji?: string
   ghUsername?: string
+  layer?: string
+  theme?: boolean
   year: string
 }

@@ -1,0 +1,59 @@
+/**
+ * Just like Starlight uses cascade layers to manage the order of its styles, the theme will also use its own layer.
+ * We first define a default, but still overridable, layer order for the theme relative to Starlight's layers.
+ *
+ * @see https://starlight.astro.build/guides/css-and-tailwind/#cascade-layers
+ * @see https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers
+ */
+@layer starlight, <%= layer %>;
+
+/**
+ * Scope the theme styles to its own layer so that user styles can override them easily.
+ */
+@layer <%= layer %> {
+  :root,
+  ::backdrop {
+    /**
+     * Override some CSS custom properties used by Starlight for the dark theme.
+     *
+     * @see https://github.com/withastro/starlight/blob/main/packages/starlight/style/props.css
+     */
+    --sl-color-accent-low: #002b27;
+    --sl-color-accent: #007a72;
+    --sl-color-accent-high: #8cdad0;
+    --sl-color-white: #ffffff;
+    --sl-color-gray-1: #ffe6ec;
+    --sl-color-gray-2: #edadbf;
+    --sl-color-gray-3: #d45d86;
+    --sl-color-gray-4: #982353;
+    --sl-color-gray-5: #6b0034;
+    --sl-color-gray-6: #4d0024;
+    --sl-color-black: #320316;
+  }
+
+  :root[data-theme='light'],
+  [data-theme='light'] ::backdrop {
+    /**
+     * Override some CSS custom properties used by Starlight for the light theme.
+     */
+    --sl-color-accent-low: #abe4dc;
+    --sl-color-accent: #007169;
+    --sl-color-accent-high: #003b36;
+    --sl-color-white: #320316;
+    --sl-color-gray-1: #4d0024;
+    --sl-color-gray-2: #6b0034;
+    --sl-color-gray-3: #982353;
+    --sl-color-gray-4: #d45d86;
+    --sl-color-gray-5: #edadbf;
+    --sl-color-gray-6: #ffe6ec;
+    --sl-color-gray-7: #fff3f6;
+    --sl-color-black: #ffffff;
+  }
+
+  /**
+   * Add rounded corners to cards.
+   */
+  .card {
+    border-radius: 0.75rem;
+  }
+}

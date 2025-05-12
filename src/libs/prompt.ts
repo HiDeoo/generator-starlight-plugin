@@ -1,7 +1,7 @@
 import type StarlightPluginGenerator from '../index.js'
 import type { Configuration } from '../index.js'
 
-import { validateEmoji, validateName, validateNonEmptyString } from './validator.js'
+import { validateEmoji, validateLayer, validateName, validateNonEmptyString } from './validator.js'
 
 export async function promptForName(generator: StarlightPluginGenerator) {
   const name = generator.options.name
@@ -15,16 +15,38 @@ export async function promptForName(generator: StarlightPluginGenerator) {
     type: 'input',
     name: 'name',
     message: 'What is the name of your Starlight plugin?',
-    default: `starlight-plugin-name`,
+    default: 'starlight-plugin-name',
     validate: validateName,
   })
 
   generator.configuration.name = answers.name
 }
 
+export async function promptForTheme(generator: StarlightPluginGenerator) {
+  const theme = generator.options.theme
+
+  if (theme !== undefined) {
+    generator.configuration.theme = theme
+    return
+  }
+
+  const answers = await generator.prompt<{ theme: boolean }>({
+    type: 'list',
+    name: 'theme',
+    message: 'Is your plugin a theme?',
+    choices: [
+      { name: 'Yes', value: true },
+      { name: 'No', value: false },
+    ],
+    default: false,
+  })
+
+  generator.configuration.theme = answers.theme
+}
+
 export async function promptForText(
   generator: StarlightPluginGenerator,
-  key: keyof Configuration,
+  key: TextConfigurationKeys,
   message: string,
   defaultValue: string,
 ) {
@@ -65,3 +87,28 @@ export async function promptForEmoji(generator: StarlightPluginGenerator) {
 
   generator.configuration.emoji = answers.emoji
 }
+
+export async function promptForLayer(generator: StarlightPluginGenerator) {
+  const layer = generator.options.layer
+
+  if (layer && validateLayer(layer) === true) {
+    generator.configuration.layer = layer
+    return
+  }
+
+  const answers = await generator.prompt<{ layer: string }>({
+    type: 'input',
+    name: 'layer',
+    message: 'What is the name of your theme CSS cascade layer?',
+    default: `my-theme`,
+    validate: validateLayer,
+  })
+
+  generator.configuration.layer = answers.layer
+}
+
+type TextConfigurationKeys = NonNullable<
+  {
+    [K in keyof Configuration]: Configuration[K] extends string | undefined ? K : never
+  }[keyof Configuration]
+>

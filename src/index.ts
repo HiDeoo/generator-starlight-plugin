@@ -73,6 +73,8 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
 
     if (this.configuration.theme) {
       copyTpl(this, 'styles.css', `${pluginPath}/styles.css`)
+      copy(this, 'theme/assets', 'docs/src/assets')
+      copyTpl(this, 'theme/examples', 'docs/src/content/docs/examples')
     }
   }
 

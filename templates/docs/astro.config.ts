@@ -14,6 +14,8 @@ export default defineConfig({
           label: 'Start Here',
           items: [{ slug: 'getting-started' }],
         },
+<% if (theme) { %>        { label: 'Examples', autogenerate: { directory: 'examples' } },
+<% } -%>
       ],
       social: [
         { href: 'https://github.com/<%= ghUsername %>/<%= name %>', icon: 'github', label: 'GitHub' },

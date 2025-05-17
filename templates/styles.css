@@ -9,6 +9,11 @@
 
 /**
  * Scope the theme styles to its own layer so that user styles can override them easily.
+ *
+ * This is where any custom CSS related to the theme should go and the current content is only
+ * provided for demonstration and documentation purposes.
+ *
+ * Feel free to remove it and add your own customizations.
  */
 @layer <%= layer %> {
   :root,

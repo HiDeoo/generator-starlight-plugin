@@ -1,5 +1,16 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.7.0
+
+### Minor Changes
+
+- [#17](https://github.com/HiDeoo/generator-starlight-plugin/pull/17) [`6ad5097`](https://github.com/HiDeoo/generator-starlight-plugin/commit/6ad50973240bdc30201d71f217497eb3f28a864a) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Improves the overall experience by asking first if the generated plugin is a theme or not.
+
+- [#17](https://github.com/HiDeoo/generator-starlight-plugin/pull/17) [`6ad5097`](https://github.com/HiDeoo/generator-starlight-plugin/commit/6ad50973240bdc30201d71f217497eb3f28a864a) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Improves the generated documentation for themes:
+
+  - Adds a kitchen sink page and many other example pages to easily preview and test themes.
+  - Adds a new documentation page on how users can customize themes with or without using cascade layers.
+
 ## 0.6.0
 
 ### Minor Changes

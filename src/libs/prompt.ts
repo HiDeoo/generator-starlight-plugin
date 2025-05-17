@@ -81,7 +81,7 @@ export async function promptForEmoji(generator: StarlightPluginGenerator) {
     name: 'emoji',
     message: 'What single emoji represents your Starlight plugin?',
     default: '🔋',
-    suffix: '(used in the documentation)',
+    suffix: ' (used in the documentation)',
     validate: validateEmoji,
   })
 

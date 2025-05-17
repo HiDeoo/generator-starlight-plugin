@@ -12,7 +12,7 @@ export default defineConfig({
       sidebar: [
         {
           label: 'Start Here',
-          items: [{ slug: 'getting-started' }],
+          items: ['getting-started'<% if (theme) { %>, 'customization'<% } %>],
         },
 <% if (theme) { %>        { label: 'Examples', autogenerate: { directory: 'examples' } },
 <% } -%>

@@ -13,9 +13,6 @@ import {
   promptForTheme,
 } from './libs/prompt.js'
 
-// TODO(HiDeoo) customization page
-// TODO(HiDeoo) plugin → theme in docs
-
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
   configuration: Configuration
 
@@ -81,10 +78,12 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     copyTpl(this, 'packages/plugin', pluginPath)
     copy(this, 'npmignore', `${pluginPath}/.npmignore`)
 
+    // theme-specific content
     if (this.configuration.theme) {
       copyTpl(this, 'styles.css', `${pluginPath}/styles.css`)
       copy(this, 'theme/assets', 'docs/src/assets')
       copyTpl(this, 'theme/examples', 'docs/src/content/docs/examples')
+      copyTpl(this, 'theme/customization.md', 'docs/src/content/docs/customization.md')
     }
   }
 

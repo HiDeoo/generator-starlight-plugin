@@ -18,6 +18,7 @@ export default function <%= importName %>(): StarlightPlugin {
 <% if (theme) { %>
         /**
          * Update the provided Starlight user configuration by appending the theme CSS file to the `customCss` array.
+         * To start customizing your theme, edit the `packages/<%= name %>/styles.css` file.
          *
          * @see https://starlight.astro.build/reference/plugins/#updateconfig
          * @see https://starlight.astro.build/reference/configuration/#customcss

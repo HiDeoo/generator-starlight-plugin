@@ -22,6 +22,11 @@ hero:
     - text: Get Started
       link: /getting-started/
       icon: right-arrow
+<% if (theme) { %>    - text: Examples
+      link: /examples/kitchen-sink/
+      icon: right-arrow
+      variant: minimal
+<% } -%>
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components'
@@ -29,10 +34,17 @@ import { Card, CardGrid } from '@astrojs/starlight/components'
 ## Next steps
 
 <CardGrid stagger>
-  <Card title="Install the plugin" icon="puzzle">
+  <Card title="Install the <% if(theme){ %>theme<% } else{ %>plugin<% } %>" icon="puzzle">
     Check the [getting started guide](/getting-started/) for installation instructions.
   </Card>
-  <Card title="Configure the plugin" icon="setting">
+  <Card title="Configure the <% if(theme){ %>theme<% } else{ %>plugin<% } %>" icon="setting">
     Edit your config in the `astro.config.mjs` file.
   </Card>
+<% if (theme) { %>  <Card title="Preview the theme" icon="seti:image">
+    Check out the [example pages](/examples/kitchen-sink/) to see the theme in action.
+  </Card>
+  <Card title="Read the docs" icon="open-book">
+    Learn more in the [`<%= name %>` documentation](/getting-started/).
+  </Card>
+<% } -%>
 </CardGrid>

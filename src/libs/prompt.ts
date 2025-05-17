@@ -3,6 +3,10 @@ import type { Configuration } from '../index.js'
 
 import { validateEmoji, validateLayer, validateName, validateNonEmptyString } from './validator.js'
 
+export function getPluginOrThemeStr(generator: StarlightPluginGenerator) {
+  return generator.configuration.theme ? 'theme' : 'plugin'
+}
+
 export async function promptForName(generator: StarlightPluginGenerator) {
   const name = generator.options.name
 
@@ -14,8 +18,8 @@ export async function promptForName(generator: StarlightPluginGenerator) {
   const answers = await generator.prompt<{ name: string }>({
     type: 'input',
     name: 'name',
-    message: 'What is the name of your Starlight plugin?',
-    default: 'starlight-plugin-name',
+    message: `What is the name of your Starlight ${getPluginOrThemeStr(generator)}?`,
+    default: `starlight-${getPluginOrThemeStr(generator)}-name`,
     validate: validateName,
   })
 
@@ -79,9 +83,9 @@ export async function promptForEmoji(generator: StarlightPluginGenerator) {
   const answers = await generator.prompt<{ emoji: string }>({
     type: 'input',
     name: 'emoji',
-    message: 'What single emoji represents your Starlight plugin?',
-    default: '🔋',
-    suffix: '(used in the documentation)',
+    message: `What single emoji represents your Starlight ${getPluginOrThemeStr(generator)}?`,
+    default: generator.configuration.theme ? '🎨' : '🔋',
+    suffix: ' (used in the documentation)',
     validate: validateEmoji,
   })
 

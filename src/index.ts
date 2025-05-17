@@ -4,7 +4,17 @@ import Generator, { type BaseOptions } from 'yeoman-generator'
 
 import { copy, copyTpl } from './libs/fs.js'
 import { fetchDependencyVersions } from './libs/npm.js'
-import { promptForEmoji, promptForLayer, promptForName, promptForText, promptForTheme } from './libs/prompt.js'
+import {
+  getPluginOrThemeStr,
+  promptForEmoji,
+  promptForLayer,
+  promptForName,
+  promptForText,
+  promptForTheme,
+} from './libs/prompt.js'
+
+// TODO(HiDeoo) customization page
+// TODO(HiDeoo) plugin → theme in docs
 
 export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
   configuration: Configuration
@@ -19,13 +29,13 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
       year: new Date().getFullYear().toString(),
     }
 
-    this.option('name', { type: String, description: 'Name of the Starlight plugin' })
-    this.option('description', { type: String, description: 'Description of the Starlight plugin' })
+    this.option('theme', { type: Boolean, description: 'Define if the plugin is a theme' })
+    this.option('name', { type: String, description: 'Name of the Starlight plugin/theme' })
+    this.option('description', { type: String, description: 'Description of the Starlight plugin/theme' })
     this.option('emoji', {
       type: String,
-      description: 'Single emoji representing the Starlight plugin (used in the documentation)',
+      description: 'Single emoji representing the Starlight plugin/theme (used in the documentation)',
     })
-    this.option('theme', { type: Boolean, description: 'Define if the plugin is a theme' })
     this.option('layer', { type: String, description: 'Name of the theme CSS cascade layer (only used for themes)' })
     this.option('ghUsername', { type: String, description: 'GitHub username' })
   }
@@ -35,15 +45,15 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
   }
 
   async prompting() {
+    await promptForTheme(this)
     await promptForName(this)
     await promptForText(
       this,
       'description',
-      'What is the description of your Starlight plugin?',
-      'My awesome Starlight plugin',
+      `What is the description of your Starlight ${getPluginOrThemeStr(this)}?`,
+      `My awesome Starlight ${getPluginOrThemeStr(this)}`,
     )
     await promptForEmoji(this)
-    await promptForTheme(this)
     if (this.configuration.theme) await promptForLayer(this)
     await promptForText(this, 'ghUsername', 'What is your GitHub username?', 'ghost')
   }
@@ -88,8 +98,10 @@ export default class StarlightPluginGenerator extends Generator<BaseOptions & Co
     this.log.info('Initializing Git repository…')
     await this.spawn('git', ['init', '--quiet'])
 
-    this.log('\nYour Starlight plugin has been successfully created!\n')
-    this.log(`Edit the 'packages/${this.configuration.name}/index.ts' file to start developing your plugin.`)
+    this.log(`\nYour Starlight ${getPluginOrThemeStr(this)} has been successfully created!\n`)
+    this.log(
+      `Edit the 'packages/${this.configuration.name}/index.ts' file to start developing your ${getPluginOrThemeStr(this)}.`,
+    )
     this.log('For more information, also visit https://starlight.astro.build/')
   }
 }

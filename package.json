@@ -19,8 +19,8 @@
     "yeoman-generator": "^7.4.0"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.5.0",
-    "@changesets/cli": "^2.27.10",
+    "@changesets/changelog-github": "^0.5.1",
+    "@changesets/cli": "^2.29.7",
     "@hideoo/eslint-config": "^4.0.0",
     "@hideoo/prettier-config": "^2.0.0",
     "@hideoo/tsconfig": "^2.0.1",
@@ -33,8 +33,7 @@
   },
   "packageManager": "pnpm@9.9.0",
   "publishConfig": {
-    "access": "public",
-    "provenance": true
+    "access": "public"
   },
   "sideEffects": false,
   "keywords": [

@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.7.1
+
+### Patch Changes
+
+- [#19](https://github.com/HiDeoo/generator-starlight-plugin/pull/19) [`77cbe54`](https://github.com/HiDeoo/generator-starlight-plugin/commit/77cbe5432437542dcac47bf8d0be8009a9cb4347) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Setups trusted publishing using OpenID Connect (OIDC) authentication — no code changes.
+
 ## 0.7.0
 
 ### Minor Changes

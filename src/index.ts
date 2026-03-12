@@ -13,7 +13,7 @@ import {
   promptForTheme,
 } from './libs/prompt.js'
 
-export default class StarlightPluginGenerator extends Generator<BaseOptions & Configuration> {
+export default class StarlightPluginGenerator extends Generator<Record<string, unknown>, BaseOptions & Configuration> {
   configuration: Configuration
 
   constructor(...args: unknown[]) {

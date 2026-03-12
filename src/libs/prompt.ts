@@ -35,7 +35,8 @@ export async function promptForTheme(generator: StarlightPluginGenerator) {
   }
 
   const answers = await generator.prompt<{ theme: boolean }>({
-    type: 'list',
+    // @ts-expect-error Invalid type definitions.
+    type: 'select',
     name: 'theme',
     message: 'Is your plugin a theme?',
     choices: [

@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.7.2
+
+### Patch Changes
+
+- [#21](https://github.com/HiDeoo/generator-starlight-plugin/pull/21) [`bddc63a`](https://github.com/HiDeoo/generator-starlight-plugin/commit/bddc63a7964257b17a769dee3e56a5dffca6fdfb) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Fixes a deprecation warning when running the plugin generator.
+
 ## 0.7.1
 
 ### Patch Changes

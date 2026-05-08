@@ -19,7 +19,7 @@
     "<%= name %>": "workspace:*"
   },
   "engines": {
-    "node": "^18.17.1 || ^20.3.0 || >=21.0.0"
+    "node": ">=22.12.0"
   },
   "private": true,
   "homepage": "https://github.com/<%= ghUsername %>/<%= name %>",

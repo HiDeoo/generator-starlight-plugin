@@ -1,5 +1,13 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.8.0
+
+### Minor Changes
+
+- [#23](https://github.com/HiDeoo/generator-starlight-plugin/pull/23) [`e31bfb9`](https://github.com/HiDeoo/generator-starlight-plugin/commit/e31bfb93b8b3c9288ab7b8004f18c83a41626349) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Adds support for Starlight version `0.39.0`.
+
+- [#23](https://github.com/HiDeoo/generator-starlight-plugin/pull/23) [`e31bfb9`](https://github.com/HiDeoo/generator-starlight-plugin/commit/e31bfb93b8b3c9288ab7b8004f18c83a41626349) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Bumps Node.js and pnpm versions in generated templates.
+
 ## 0.7.2
 
 ### Patch Changes

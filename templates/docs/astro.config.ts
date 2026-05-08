@@ -14,7 +14,7 @@ export default defineConfig({
           label: 'Start Here',
           items: ['getting-started'<% if (theme) { %>, 'customization'<% } %>],
         },
-<% if (theme) { %>        { label: 'Examples', autogenerate: { directory: 'examples' } },
+<% if (theme) { %>        { label: 'Examples', items: [{ autogenerate: { directory: 'examples' } }] },
 <% } -%>
       ],
       social: [

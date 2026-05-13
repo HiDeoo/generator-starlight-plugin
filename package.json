@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "camelcase": "^9.0.0",
-    "latest-version": "^9.0.0",
+    "fast-npm-meta": "^1.5.1",
     "yeoman-generator": "^8.1.1"
   },
   "devDependencies": {

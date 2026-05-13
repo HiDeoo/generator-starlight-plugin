@@ -67,7 +67,7 @@ export default class StarlightPluginGenerator extends Generator<Record<string, u
     copyTpl(this, 'LICENSE')
     copyTpl(this, 'README.md')
     copyTpl(this, 'package.json')
-    copy(this, 'pnpm-workspace.yaml')
+    copyTpl(this, 'pnpm-workspace.yaml')
 
     // docs
     copyTpl(this, 'docs')

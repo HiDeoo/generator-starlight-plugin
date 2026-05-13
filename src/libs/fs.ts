@@ -2,7 +2,7 @@ import camelCase from 'camelcase'
 
 import type StarlightPluginGenerator from '../index.js'
 
-import { getLatestMinorVersion, getLatestVersion } from './npm.js'
+import { getLatestMinorVersion, getLatestVersion, MinimumReleaseAgeInDays } from './npm.js'
 
 export function copyTpl(generator: StarlightPluginGenerator, from: string, to?: string) {
   generator.fs.copyTpl(
@@ -20,6 +20,8 @@ function getTemplateContext(generator: StarlightPluginGenerator) {
   return {
     ...generator.configuration,
     importName: generator.configuration.name ? camelCase(generator.configuration.name) : generator.configuration.name,
+    minimumReleaseAgeInDays: MinimumReleaseAgeInDays,
+    minimumReleaseAgeInMinutes: MinimumReleaseAgeInDays * 24 * 60,
     dep(pkg: string) {
       return `"${pkg}": "^${getLatestVersion(pkg)}"`
     },

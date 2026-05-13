@@ -1,5 +1,13 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.9.0
+
+### Minor Changes
+
+- [#25](https://github.com/HiDeoo/generator-starlight-plugin/pull/25) [`1e76e80`](https://github.com/HiDeoo/generator-starlight-plugin/commit/1e76e801ef269bb7ee56c609aa6e0ee308b4b2b9) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Uses pnpm version `11.1.1` for generated templates.
+
+- [#25](https://github.com/HiDeoo/generator-starlight-plugin/pull/25) [`1e76e80`](https://github.com/HiDeoo/generator-starlight-plugin/commit/1e76e801ef269bb7ee56c609aa6e0ee308b4b2b9) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Adds a [`minimumReleaseAge`](https://pnpm.io/settings#minimumreleaseage) pnpm setting of 3 days to generated templates and resolved dependency versions now satisfy this requirement.
+
 ## 0.8.0
 
 ### Minor Changes

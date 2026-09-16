@@ -1,5 +1,11 @@
 # @hideoo/generator-starlight-plugin
 
+## 0.10.0
+
+### Minor Changes
+
+- [#27](https://github.com/HiDeoo/generator-starlight-plugin/pull/27) [`4e91872`](https://github.com/HiDeoo/generator-starlight-plugin/commit/4e91872fc78594576010459d7d58fab857e92b99) Thanks [@HiDeoo](https://github.com/HiDeoo)! - Uses pnpm version `12.3.4` for generated templates.
+
 ## 0.9.0
 
 ### Minor Changes

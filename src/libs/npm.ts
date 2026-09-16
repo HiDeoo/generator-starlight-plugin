@@ -57,7 +57,7 @@ function getVersionWithMinimumReleaseAge(
     if (latestDistTagVersion && compareVersions(parsedVersion, latestDistTagVersion) > 0) continue
 
     const publishedAt = time[version]
-    const publishedTimestamp = publishedAt ? Date.parse(publishedAt) : Number.NaN
+    const publishedTimestamp = publishedAt ? Date.parse(publishedAt) : NaN
 
     if (Number.isNaN(publishedTimestamp) || publishedTimestamp > minimumPublishedAt) continue
 

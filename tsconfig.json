@@ -3,7 +3,8 @@
   "compilerOptions": {
     "module": "NodeNext",
     "moduleResolution": "nodenext",
-    "outDir": "app"
+    "outDir": "app",
+    "rootDir": "src"
   },
   "exclude": ["templates"]
 }

@@ -18,9 +18,6 @@
     <%- dep("sharp") %>,
     "<%= name %>": "workspace:*"
   },
-  "engines": {
-    "node": ">=22.12.0"
-  },
   "private": true,
   "homepage": "https://github.com/<%= ghUsername %>/<%= name %>",
   "repository": {
